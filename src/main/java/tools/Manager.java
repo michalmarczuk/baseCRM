@@ -27,6 +27,12 @@ public class Manager {
 		return driver;
 	}
 	
+	public static void closeBrowser() {
+		driver.close();
+		driver.quit();
+		driver = null;
+	}
+	
 	public static String getURL() {
 		return getProperty("url");
 	}

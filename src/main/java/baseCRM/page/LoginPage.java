@@ -10,7 +10,7 @@ import tools.Manager;
 public class LoginPage extends Page {
 
 	public SalesPage login() {
-		logger.info("Logging with credentials: " + Manager.getUser() + ", " + Manager.getPassword());
+		logger.info("Logging with user: " + Manager.getUser());
 		userEmailField.sendKeys(Manager.getUser());
 		userPasswordField.sendKeys(Manager.getPassword());
 		loginButton.click();

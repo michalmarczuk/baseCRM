@@ -36,6 +36,7 @@ public class LeadsPage extends DashboardPage {
 		
 		for (WebElement leadLink : leadsList) {
 			if (leadLink.getText().equals(leadName)) {
+				logger.info("Click \"" + leadName + "\" lead");
 				leadLink.click();
 				
 				return PageFactory.initElements(Manager.getDriver(), LeadDetailsPage.class);

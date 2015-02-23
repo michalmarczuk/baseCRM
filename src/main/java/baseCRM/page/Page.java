@@ -26,7 +26,6 @@ public abstract class Page extends LoadableComponent<Page> {
 	
 	@Override
 	protected void load() {
-		logger.info("Opening page: " + Manager.getURL());
 		Manager.getDriver().get(Manager.getURL());
 	}
 	

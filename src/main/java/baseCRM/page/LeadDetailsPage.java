@@ -27,7 +27,7 @@ public class LeadDetailsPage extends DashboardPage {
 		logger.info("Check status. Expecting: " + status);
 		Assert.assertEquals(leadStatus.getText(), status);
 		
-		return PageFactory.initElements(Manager.getDriver(), LeadDetailsPage.class);
+		return this;
 	}
 	
 	@FindBy(className = "delete")

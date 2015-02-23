@@ -1,8 +1,9 @@
 package baseCRM;
 
-import org.testng.annotations.AfterTest;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 
+import tools.Manager;
 import baseCRM.data.LeadData;
 import baseCRM.page.LoginPage;
 
@@ -19,8 +20,10 @@ public class TestLead {
 		new LoginPage().login().leads().createNewLead(leadData).checkStatus("New").settingsProfile().leadSettings().setLeadStatus("Very new").logout();
 	}
 	
-	@AfterTest
+	@AfterClass
 	public void tearDown() throws Exception {
-		new LoginPage().login().leads().editLead(leadData).deleteLead();
+		new LoginPage().login().leads().editLead(leadData).deleteLead().logout();
+		
+		Manager.closeBrowser();
 	}
 }

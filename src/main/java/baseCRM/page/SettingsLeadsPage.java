@@ -5,16 +5,13 @@ import java.util.List;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.FindBys;
-import org.openqa.selenium.support.PageFactory;
-
-import tools.Manager;
 
 public class SettingsLeadsPage extends SettingsPage {
 
 	public SettingsLeadsPage setLeadStatus(String status) {
 		getSettingTabByText("Lead Statuses").click();
 		
-		return PageFactory.initElements(Manager.getDriver(), SettingsLeadsPage.class);
+		return this;
 	}
 	
 	@Override

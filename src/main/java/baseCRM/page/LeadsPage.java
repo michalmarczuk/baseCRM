@@ -15,6 +15,7 @@ public class LeadsPage extends DashboardPage {
 
 	public LeadDetailsPage createNewLead(LeadData leadData) throws Exception {
 		logger.info("Click new lead");
+		Thread.sleep(1000);
 		newLeadButton.click();
 		
 		//Set data from leadData

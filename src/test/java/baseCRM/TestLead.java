@@ -29,7 +29,7 @@ public class TestLead {
 	}
 
 	@Test
-	public void create_and_rename_status_lead() throws Exception {
+	public void create_lead_and_rename_status_lead() throws Exception {
 		leadData = new LeadData();
 		leadData.setFirstName("Florence Foster");
 		leadData.setLastName("Jenkins");

@@ -45,7 +45,6 @@ public class Manager {
 		return getProperty("password");
 	}
 	
-//	TODO Fix code readability
 	private static String getProperty(String property) {
 		if (properties == null) {
 			inputStream = Manager.class.getResourceAsStream("/test.properties");

@@ -13,10 +13,8 @@ import baseCRM.data.LeadData;
 
 public class LeadsPage extends DashboardPage {
 
-	//TODO Fix ugly sleep
 	public LeadDetailsPage createNewLead(LeadData leadData) throws Exception {
 		logger.info("Click new lead");
-		Thread.sleep(1000);
 		newLeadButton.click();
 		
 		//Set data from leadData
@@ -25,7 +23,7 @@ public class LeadsPage extends DashboardPage {
 		logger.info("Set last name: " + leadData.getLastName());
 		Manager.getDriver().findElement(By.id("lead-last-name")).sendKeys(leadData.getLastName());
 		
-		logger.info("Click save");
+		logger.info("Click save button");
 		Manager.getDriver().findElement(By.className("save")).click();
 		
 		return PageFactory.initElements(Manager.getDriver(), LeadDetailsPage.class);

@@ -10,11 +10,6 @@ import tools.Manager;
 
 public class LeadDetailsPage extends DashboardPage {
 	
-	@Override
-	protected void isLoaded() throws Error {
-		urlEndsWith(".*/leads/\\d+");
-	}
-	
 	public LeadsPage deleteLead() throws Exception {
 		logger.info("Delete lead");
 		deleteButton.click();
@@ -28,6 +23,11 @@ public class LeadDetailsPage extends DashboardPage {
 		Assert.assertEquals(leadStatus.getText(), status);
 		
 		return this;
+	}
+	
+	@Override
+	protected void isLoaded() throws Error {
+		urlEndsWith(".*/leads/\\d+");
 	}
 	
 	@FindBy(className = "delete")

@@ -29,17 +29,17 @@ public abstract class Page extends LoadableComponent<Page> {
 		Manager.getDriver().get(Manager.getURL());
 	}
 	
-	//TODO sleep!
-	protected void urlEndsWith(String regexp) {
-		try {
-			Thread.sleep(1500);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} 
+	protected void urlEndsWith(String regexp) {	
+		for (int i = 0; i < 10; i++) {
+			try { Thread.sleep(500); } 
+			catch (InterruptedException e) { e.printStackTrace(); }
+			String pageURL = Manager.getDriver().getCurrentUrl();
+			if (pageURL.matches(regexp)) {
+				logger.info("Loaded page: " + getClass().getName());
+				return;
+			}
+		}
 		
-		String pageURL = Manager.getDriver().getCurrentUrl();
-		Assert.assertTrue(pageURL.matches(regexp), "Something went wrong I'm not on " + getClass().getName());
-		logger.info("Loaded page: " + getClass().getName());
+		Assert.fail("Something went wrong I'm not on " + getClass().getName());
 	}
 }

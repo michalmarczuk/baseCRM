@@ -9,7 +9,9 @@ How to run test:
 `mvn clean test`
 
 You can also use some switches to run test on other host:
+
 `mvn clean test -Durl=http://www.some.other.instance.of.base.com`
 
 and with other credentials:
+
 `mvn clean test -Duser=Some_User -Dpassword=S3cret_Password`
